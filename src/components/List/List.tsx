@@ -7,19 +7,16 @@ type ListPropsType = {
 }
 
 export const List = (props: ListPropsType) => {
-
+    
+    const addTask = props.tasks.map((e) => {
+        return <Task title={e.title}  isDone={e.isDone} id={e.id}/>
+    })
 
 
     return <>
         <div className="todoList-tasks">
-            {/* <Task title={'CSS'} isDone={true}/>
-            <Task title={'JS'} isDone={false}/>
-            <Task title={'ReactJS'} isDone={false}/>
-            <Task title={'Patterns'} isDone={true}/> */}
-            {props.tasks.map((e) => {
-                return <Task title={e.title}  isDone={e.isDone} id={e.id}/>
-            })}
-          </div>
+            {addTask}
+        </div>
     </>
 }
 

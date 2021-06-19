@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './List.module.css'
 
 type TaskPropsType = {
     isDone: boolean;
@@ -8,9 +9,11 @@ type TaskPropsType = {
 };
 export const Task = (props: TaskPropsType) => {
 
+    const isDoneStyle = props.isDone ? styles.done : '';
+
     return <>
-        <div className="todoList-task">
-            <input id={props.id} type="checkbox" checked={props.isDone} />
+        <div className={styles.task + ' ' + isDoneStyle}>
+            <input  id={props.id} type="checkbox" checked={props.isDone} />
             <span>{props.title}</span>
         </div>
     </>;

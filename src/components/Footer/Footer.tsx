@@ -6,9 +6,9 @@ export const Footer = () => {
 
     return <>
         <div className="todoList-footer">
-            <Button text = {'All'}/>
-            <Button text = {'Completed'}/>
-            <Button text = {'Active'}/>
+            <Button text = {'All'} type = {'info'}/>
+            <Button text = {'Completed'} type = {'success'}/>
+            <Button text = {'Active'} type = {'danger'}/>
           </div>
     </>
 }
