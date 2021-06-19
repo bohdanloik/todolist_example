@@ -1,14 +1,18 @@
 import React from 'react';
+import { Button } from '../Button/Button';
+import { Input } from '../Input/Input';
 
-
-export const Header = () => {
+type HeaderPropsType = {
+    placeholder: string
+}
+export const Header = (props: HeaderPropsType) => {
 
     return <>
         <div className="todoList-header">
             <h3 className="todoList-header__title">What to Learn</h3>
             <div className="todoList-newTaskForm">
-              <input type="text" placeholder="title"/>
-              <button>Add</button>
+              <Input placeholder={props.placeholder}/>
+              <Button text='Add'/>
             </div>
           </div>
     </>

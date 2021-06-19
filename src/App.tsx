@@ -1,18 +1,14 @@
 import React from 'react';
 import './App.css';
-import { Footer } from './components/Footer/Footer';
-import { Header } from './components/Header/Header';
-import { List } from './components/List/List';
+import { Todolist } from './components/Todolist/Todolist';
+
 
 
 function App() {
   return (
       <div className="App">
-        <div className="todoList">
-          <Header />
-          <List />
-          <Footer />
-        </div>
+        <Todolist placeholder={'Hello World'}/>
+        <Todolist placeholder={'Example'}/>
       </div>
   );
 }

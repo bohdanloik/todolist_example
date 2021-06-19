@@ -1,13 +1,14 @@
 import React from 'react';
+import { Button } from '../Button/Button';
 
 
 export const Footer = () => {
 
     return <>
         <div className="todoList-footer">
-            <button>All</button>
-            <button>Completed</button>
-            <button>Active</button>
+            <Button text = {'All'}/>
+            <Button text = {'Completed'}/>
+            <Button text = {'Active'}/>
           </div>
     </>
 }
