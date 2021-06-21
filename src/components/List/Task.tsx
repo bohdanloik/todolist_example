@@ -6,6 +6,7 @@ type TaskPropsType = {
     isDone: boolean;
     title: string;
     id: string
+    deleteTask: (id: string) => void
 
 };
 export const Task = (props: TaskPropsType) => {
@@ -20,6 +21,7 @@ export const Task = (props: TaskPropsType) => {
         <div className={css}>
             <input  id={props.id} type="checkbox" checked={props.isDone} />
             <span>{props.title}</span>
+            <button onClick={() => props.deleteTask(props.id)}>x</button>
         </div>
     </>;
 

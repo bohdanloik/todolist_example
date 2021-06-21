@@ -10,6 +10,7 @@ type TodolistPropsType = {
     placeholder: string
     tasks: Array<TasksPropsType>
     listTitle: string
+    deleteTask: (id: string) => void
 }
 
 export const Todolist = (props: TodolistPropsType) => {
@@ -18,7 +19,7 @@ export const Todolist = (props: TodolistPropsType) => {
     return <>
     <div className="todoList">
           <Header  placeholder={props.placeholder} listTitle={props.listTitle}/>
-          <List tasks={props.tasks}/>
+          <List tasks={props.tasks} deleteTask={props.deleteTask}/>
           <Footer />
     </div>
     </>
