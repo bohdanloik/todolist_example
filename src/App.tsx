@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { v1 } from 'uuid';
 import './App.css';
+import { AddItemForm } from './common/AddItemForm/AddItemForm';
 import { Todolist } from './components/Todolist/Todolist';
 
 
@@ -40,23 +41,36 @@ function App() {
     setlist(updatedTasks);
   };
 
+  const removeTodolist = (id: string) => {
+    alert(`remove todolist ${id}`)
+  }
+
   
 
   return (
       <div className="App">
-        <Todolist 
-          tasks={tasks4} 
-          placeholder={'Hello World'} 
-          listTitle={'What to learn'} 
-          deleteTask={id => removeTask(tasks4, setTask4, id)}
-          
+        <div>
+          <AddItemForm placeholder={'Add new todolist'}/>
+        </div>
+        <div>
+            <Todolist 
+              id = {v1()}
+              tasks = {tasks4} 
+              placeholder = {'Hello World'} 
+              listTitle = {'What to learn'} 
+              deleteTask = {id => removeTask(tasks4, setTask4, id)}
+              removeTodolist={removeTodolist}
+              />
+            <Todolist 
+              id = {v1()}
+              tasks = {tasks5} 
+              placeholder = {'Example'} 
+              listTitle = {'What to eat'} 
+              deleteTask = {id => removeTask(tasks5, setTask5, id)}
+              removeTodolist={removeTodolist}
           />
-        <Todolist 
-          tasks={tasks5} 
-          placeholder={'Example'} 
-          listTitle={'What to eat'} 
-          deleteTask={id => removeTask(tasks5, setTask5, id)}
-          />
+        </div>
+        
         {/* <Todolist tasks={tasks3} placeholder={'Example1'} listTitle={'What to buy'}/> */}
       </div>
   );
