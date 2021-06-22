@@ -32,6 +32,8 @@ function App() {
   ];
 
   let [tasks4, setTask4] = useState(tasks1)
+  let [tasks5, setTask5] = useState(tasks2)
+
 
   const removeTask = (list: Array<any>, setlist: any, id: string) => {
     const updatedTasks = list.filter(e => e.id !== id);
@@ -43,8 +45,10 @@ function App() {
         <Todolist tasks={tasks4} placeholder={'Hello World'} listTitle={'What to learn'} deleteTask={(id) => {
           removeTask(tasks4, setTask4, id)
         }}/>
-        {/* <Todolist tasks={tasks2} placeholder={'Example'} listTitle={'What to eat'}/>
-        <Todolist tasks={tasks3} placeholder={'Example1'} listTitle={'What to buy'}/> */}
+        <Todolist tasks={tasks5} placeholder={'Example'} listTitle={'What to eat'} deleteTask={(id) => {
+          removeTask(tasks5, setTask5, id)
+        }}/>
+        {/* <Todolist tasks={tasks3} placeholder={'Example1'} listTitle={'What to buy'}/> */}
       </div>
   );
 }
