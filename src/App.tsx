@@ -40,14 +40,23 @@ function App() {
     setlist(updatedTasks);
   };
 
+  
+
   return (
       <div className="App">
-        <Todolist tasks={tasks4} placeholder={'Hello World'} listTitle={'What to learn'} deleteTask={(id) => {
-          removeTask(tasks4, setTask4, id)
-        }}/>
-        <Todolist tasks={tasks5} placeholder={'Example'} listTitle={'What to eat'} deleteTask={(id) => {
-          removeTask(tasks5, setTask5, id)
-        }}/>
+        <Todolist 
+          tasks={tasks4} 
+          placeholder={'Hello World'} 
+          listTitle={'What to learn'} 
+          deleteTask={id => removeTask(tasks4, setTask4, id)}
+          
+          />
+        <Todolist 
+          tasks={tasks5} 
+          placeholder={'Example'} 
+          listTitle={'What to eat'} 
+          deleteTask={id => removeTask(tasks5, setTask5, id)}
+          />
         {/* <Todolist tasks={tasks3} placeholder={'Example1'} listTitle={'What to buy'}/> */}
       </div>
   );

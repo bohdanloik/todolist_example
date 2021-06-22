@@ -1,6 +1,5 @@
 import React from 'react';
-import { Button } from '../Button/Button';
-import { Input } from '../Input/Input';
+import { AddItemForm } from '../../common/AddItemForm/AddItemForm';
 
 type HeaderPropsType = {
     placeholder: string
@@ -10,11 +9,9 @@ export const Header = (props: HeaderPropsType) => {
 
     return <>
         <div className="todoList-header">
-            <h3 className="todoList-header__title">{props.listTitle}</h3>
-            <div className="todoList-newTaskForm">
-              <Input placeholder={props.placeholder}/>
-              <Button text='Add' type={'info'}/>
-            </div>
+            <h3 className="todoList-header__title">{props.listTitle} <button>x</button></h3>
+            <AddItemForm placeholder={props.placeholder}/>
           </div>
     </>
 }
+

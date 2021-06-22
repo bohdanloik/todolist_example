@@ -15,5 +15,5 @@ export const Button = (props: PropsTypeButton) => {
         [styles.success] : props.type === 'success',
         [styles.danger] : props.type === 'danger'
     })
-    return <button className={css}>{props.text}</button>
+    return <button className={css}>{props.text}  </button>
 }
