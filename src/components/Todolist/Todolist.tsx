@@ -13,6 +13,7 @@ type TodolistPropsType = {
     deleteTask: (id: string) => void
     id: string
     removeTodolist : (id: string) => void
+    filterTask: (tasks: Array<any>, filter: string) => void
 }
 
 export const Todolist = (props: TodolistPropsType) => {
@@ -22,7 +23,7 @@ export const Todolist = (props: TodolistPropsType) => {
     <div className="todoList">
           <Header  placeholder={props.placeholder} listTitle={props.listTitle} id={props.id} removeTodolist={props.removeTodolist}/>
           <List tasks={props.tasks} deleteTask={props.deleteTask}/>
-          <Footer />
+          <Footer filterTask ={props.filterTask} />
     </div>
     </>
 }

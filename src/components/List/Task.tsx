@@ -3,9 +3,10 @@ import styles from './List.module.css';
 import cn from 'classnames';
 
 type TaskPropsType = {
-    isDone: boolean;
-    title: string;
+    isDone: boolean
+    title: string
     id: string
+    key: string
     deleteTask: (id: string) => void
 
 };
@@ -19,7 +20,7 @@ export const Task = (props: TaskPropsType) => {
 
     return <>
         <div className={css}>
-            <input  id={props.id} type="checkbox" checked={props.isDone} />
+            <input  id={props.id} type="checkbox" checked={props.isDone} readOnly/>
             <span>{props.title}</span>
             <button onClick={() => props.deleteTask(props.id)}>x</button>
         </div>

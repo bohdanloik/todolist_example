@@ -10,7 +10,7 @@ type ListPropsType = {
 export const List = (props: ListPropsType) => {
     
     const addTask = props.tasks.map((e) => {
-        return <Task title={e.title}  isDone={e.isDone} id={e.id} deleteTask={props.deleteTask}/>
+        return <Task title={e.title}  isDone={e.isDone} id={e.id} key={e.id} deleteTask={props.deleteTask}/>
     })
 
 
